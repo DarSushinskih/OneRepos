@@ -1,17 +1,17 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace СastleOpen
+namespace РЎastleOpen
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Открой замок!");
-            Console.WriteLine("Для того что бы подобрать замок, вы должы подоборать числа только к остальным значениям ячеек!");
+            Console.WriteLine("РћС‚РєСЂРѕР№ Р·Р°РјРѕРє!");
+            Console.WriteLine("Р”Р»СЏ С‚РѕРіРѕ С‡С‚Рѕ Р±С‹ РїРѕРґРѕР±СЂР°С‚СЊ Р·Р°РјРѕРє, РІС‹ РґРѕР»Р¶С‹ РїРѕРґРѕР±РѕСЂР°С‚СЊ С‡РёСЃР»Р° С‚РѕР»СЊРєРѕ Рє РѕСЃС‚Р°Р»СЊРЅС‹Рј Р·РЅР°С‡РµРЅРёСЏРј СЏС‡РµРµРє!");
             Random rnd = new Random();
             Dictionary<int, int> Castle = new Dictionary<int, int> { { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, 
                                 { 5, 0 }, { 6, 0 }, { 7, 0 }, { 8, 0 }, { 9, 0 }, { 10, 0 }};
@@ -23,13 +23,13 @@ namespace СastleOpen
                 Console.WriteLine(x.Key.ToString() + ". = " + x.Value.ToString());
             }
 
-            Console.WriteLine("Теперь по очерёдно вводите значения ячеек от 1 до 6:");
+            Console.WriteLine("РўРµРїРµСЂСЊ РїРѕ РѕС‡РµСЂС‘РґРЅРѕ РІРІРѕРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ СЏС‡РµРµРє РѕС‚ 1 РґРѕ 6:");
 
             for (int i = 1; i < Castle.Count + 1; i++)
             {
                 vvod:
                 if (Castle[i] != 0) continue;
-                Console.WriteLine("Введите значение для ячейки №" + i + ":");
+                Console.WriteLine("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ СЏС‡РµР№РєРё в„–" + i + ":");
                 int input = -1;
                 try
                 {
@@ -37,30 +37,30 @@ namespace СastleOpen
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Не верно введено значение!");
+                    Console.WriteLine("РќРµ РІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ!");
                     goto vvod;
                 }
                 if (input < 1 || input > 7)
                 {
-                    Console.WriteLine("Не верно введено значение!");
+                    Console.WriteLine("РќРµ РІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ!");
                     goto vvod;
                 }
                 Castle[i] = input;
             }
-            Console.WriteLine("Замок имеет вид: ");
+            Console.WriteLine("Р—Р°РјРѕРє РёРјРµРµС‚ РІРёРґ: ");
             foreach (var x in Castle)
             {
-                Console.WriteLine("№" + x.Key + " = " + x.Value);
+                Console.WriteLine("в„–" + x.Key + " = " + x.Value);
             }
 
 
             if (SeachWin(Castle))
             {
-                Console.WriteLine("Поздравляю! Вы открыли замок!");
+                Console.WriteLine("РџРѕР·РґСЂР°РІР»СЏСЋ! Р’С‹ РѕС‚РєСЂС‹Р»Рё Р·Р°РјРѕРє!");
             }
             else
             {
-                Console.WriteLine("Увы! В другой раз =(");
+                Console.WriteLine("РЈРІС‹! Р’ РґСЂСѓРіРѕР№ СЂР°Р· =(");
             }
 
             Console.ReadLine();
