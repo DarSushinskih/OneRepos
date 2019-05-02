@@ -1,0 +1,7 @@
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\bin\Debug\СastleOpen.exe.config
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\bin\Debug\СastleOpen.exe
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\bin\Debug\СastleOpen.pdb
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\obj\Debug\СastleOpen.csprojAssemblyReference.cache
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\obj\Debug\СastleOpen.csproj.CoreCompileInputs.cache
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\obj\Debug\СastleOpen.exe
+C:\Users\kolai\source\repos\СastleOpen\СastleOpen\obj\Debug\СastleOpen.pdb
