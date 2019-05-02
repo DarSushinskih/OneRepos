@@ -1,16 +1,16 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ÑastleOpen
+namespace СastleOpen
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Открой замок!!");
+            Console.WriteLine("Открой замок!");
             Console.WriteLine("Для того что бы подобрать замок, вы должы подоборать числа только к остальным значениям ячеек!");
             Random rnd = new Random();
             Dictionary<int, int> Castle = new Dictionary<int, int> { { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, 
@@ -29,7 +29,7 @@ namespace ÑastleOpen
             {
                 vvod:
                 if (Castle[i] != 0) continue;
-                Console.WriteLine("Ââåäèòå çíà÷åíèå äëÿ ÿ÷åéêè ¹" + i + ":");
+                Console.WriteLine("Введите значение для ячейки №" + i + ":");
                 int input = -1;
                 try
                 {
@@ -37,30 +37,30 @@ namespace ÑastleOpen
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Íå âåðíî ââåäåíî çíà÷åíèå!");
+                    Console.WriteLine("Не верно введено значение!");
                     goto vvod;
                 }
-                if (input < 1 || input > 7)
+                if (input < 1 || input >= 7)
                 {
-                    Console.WriteLine("Íå âåðíî ââåäåíî çíà÷åíèå!");
+                    Console.WriteLine("Не верно введено значение!");
                     goto vvod;
                 }
                 Castle[i] = input;
             }
-            Console.WriteLine("Çàìîê èìååò âèä: ");
+            Console.WriteLine("Замок имеет вид: ");
             foreach (var x in Castle)
             {
-                Console.WriteLine("¹" + x.Key + " = " + x.Value);
+                Console.WriteLine("№" + x.Key + " = " + x.Value);
             }
 
 
             if (SeachWin(Castle))
             {
-                Console.WriteLine("Ïîçäðàâëÿþ! Âû îòêðûëè çàìîê!");
+                Console.WriteLine("Поздравляю! Вы открыли замок!");
             }
             else
             {
-                Console.WriteLine("Óâû! Â äðóãîé ðàç =(");
+                Console.WriteLine("Увы! В другой раз =(");
             }
 
             Console.ReadLine();
