@@ -1,0 +1,14 @@
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+F:\Программная инженерия\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
