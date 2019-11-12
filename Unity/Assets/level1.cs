@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class level1 : MonoBehaviour
 {
-    public Text text, text1, text2, text3, text4, text5, text6, text7, otvet;
+    [SerializeField] Text text, text1, text2, text3, text4, text5, text6, text7, otvet, prov;
     int result1;
     int result2;
     int result3;
@@ -13,6 +13,9 @@ public class level1 : MonoBehaviour
     int result5;
     int result6;
     // Start is called before the first frame update
+
+   
+    
     public void Summa()
     {
         result1 = (int.Parse(text.text) + int.Parse(text1.text) + int.Parse(text2.text));
@@ -22,10 +25,22 @@ public class level1 : MonoBehaviour
         result5 = (int.Parse(text4.text) + int.Parse(text5.text) + int.Parse(text6.text));
         result6= (int.Parse(text5.text) + int.Parse(text6.text) + int.Parse(text7.text));
     }
-    public void Proverka()
+    public void Vvod()
     {
         
-        if (result1 == 10)
+        if (0 > int.Parse(text.text) || int.Parse(text.text) > 7)
+        {
+            prov.text = "Введите число из допустимого диапазона!!!";
+        }
+       
+
+    }
+    public void Proverka()
+    {
+        Vvod();
+        Summa();
+        
+        if (result1 == 10 || result2 == 10 || result3 == 10 || result4 == 10 || result5 == 10 || result6 == 10)
         {
             otvet.text = "Открыт";
         }
@@ -33,8 +48,13 @@ public class level1 : MonoBehaviour
         {
             otvet.text = "Замок закрыт";
         }
+       
+       
+    
+           
 
     }
+
    
    
 }
