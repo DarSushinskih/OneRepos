@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class level2 : MonoBehaviour
 {
+
     [SerializeField] Text[] text = new Text[9];
     [SerializeField] Text[] input = new Text[3];
     [SerializeField] Text zadanie, text1;
@@ -28,6 +29,8 @@ public class level2 : MonoBehaviour
         image2.SetActive(false);
         bottem.SetActive(true);
 
+       Random.InitState(125);
+
         text[0].text = (Random.Range(0, 9)).ToString();
         text[1].text = (Random.Range(0, 9)).ToString();
         text[2].text = (Random.Range(0, 9)).ToString();
@@ -39,56 +42,17 @@ public class level2 : MonoBehaviour
         text[6].text = text[2].text;
         text[7].text = (Random.Range(0, 9)).ToString();
         text[8].text = (Random.Range(0, 9)).ToString();
+      
+        Rand_1();
+        Rand_2();
+        Rand_3();
+
+        Otvet();
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i <= 1; i++)
-        {
-            if (text[i].text == text[i + 1].text || text[i].text == text[i + 2].text)
-            {
-                text[i].text = (Random.Range(0, 9)).ToString();
-                Debug.Log(text[i].text);
-            }
-        }
-
-        for (int i = 3; i <= 4; i++)
-        {
-            if (text[i].text == text[i + 1].text || text[i].text == text[i + 2].text)
-            {
-                text[i].text = (Random.Range(0, 9)).ToString();
-                Debug.Log(text[i].text);
-            }
-            if (text[i].text == text[2].text)
-            {
-                text[i].text = (Random.Range(0, 9)).ToString();
-                Debug.Log(text[i].text);
-            }
-            if (text[2].text == text[5].text)
-            {
-                text[5].text = (Random.Range(0, 9)).ToString();
-                Debug.Log(text[5].text);
-            }
-        }
-
-
-        if (text[7].text == text[0].text || text[7].text == text[1].text || text[7].text == text[3].text || text[7].text == text[4].text || text[7].text == text[8].text)
-        {
-            text[7].text = (Random.Range(0, 9)).ToString();
-            Debug.Log(text[7].text);
-        }
-
-
-        for (int i = 7; i < 9; i++)
-        {
-            if (text[i].text == text[6].text || text[i].text == text[5].text)
-            {
-                text[i].text = (Random.Range(0, 9)).ToString();
-                Debug.Log(text[i].text);
-            }
-
-        }
 
         if (health < 0)
         {
@@ -119,12 +83,76 @@ public class level2 : MonoBehaviour
                 lives[i].enabled = false;
             }
         }
+
+    }
+
+    public void Rand_1()
+    {
+        for (int i = 0; i <= 1; i++)
+        {
+            if (text[i].text == text[i + 1].text || text[i].text == text[i + 2].text)
+            {
+                text[i].text = (Random.Range(0, 9)).ToString();
+                //Debug.Log(text[2].text);
+            }
+        }
+    }
+
+    public void Rand_2()
+    {
+        for (int i = 3; i <= 4; i++)
+        {
+            while (text[i].text == text[i + 1].text || text[i].text == text[i + 2].text)
+            {
+                text[i].text = (Random.Range(0, 9)).ToString();
+                //Debug.Log(text[i].text);
+            }
+            if (text[i].text == text[2].text)
+            {
+                text[i].text = (Random.Range(0, 9)).ToString();
+                //Debug.Log(text[i].text);
+            }
+            if (text[2].text == text[5].text)
+            {
+                text[5].text = (Random.Range(0, 9)).ToString();
+            }
+           if (text[5].text == text[0].text || text[5].text == text[1].text)
+            {
+                text[5].text = (Random.Range(0, 9)).ToString();
+                Debug.Log(text[5].text);
+            }
+        }
+    }
+
+    public void Rand_3()
+    {
+        while (text[7].text == text[0].text || text[7].text == text[1].text || text[7].text == text[3].text || text[7].text == text[4].text || text[7].text == text[8].text)
+        {
+            text[7].text = (Random.Range(0, 9)).ToString();
+            Debug.Log(text[7].text);
+        }
+
+
+        for (int i = 7; i < 9; i++)
+        {
+
+            while (text[i].text == text[2].text || text[i].text == text[5].text)
+            {
+                text[i].text = (Random.Range(0, 9)).ToString();
+                //Debug.Log(text[i].text);
+            }
+        }
+    }
+    public void Otvet()
+    {
+        Debug.Log("Ответ");
+        Debug.Log(text[7].text + text[5].text + text[6].text);
     }
 
     public void Proverka()
     {
 
-        if (input[0].text == text[7].text || input[1].text == text[5].text || input[2].text == text[2].text)
+        if (input[0].text == text[7].text && input[1].text == text[5].text && input[2].text == text[2].text)
         {
             image.SetActive(true);
         }
@@ -133,8 +161,8 @@ public class level2 : MonoBehaviour
             image1.SetActive(true);
             health = health - 1;
         }
-
     }
+
     public void Podskazka()
     {
         text1.text = "Попытка №4";
@@ -142,32 +170,30 @@ public class level2 : MonoBehaviour
 
         health = health - 1;
 
-        text[9].text = (Random.Range(0, 9)).ToString();
-        text[10].text = (Random.Range(0, 9)).ToString();
-        text[11].text = (Random.Range(0, 9)).ToString();
+        text[9].text = text[0].text;
+        text[10].text = text[4].text;
+        text[11].text = text[8].text;
 
         bottem.SetActive(false);
 
-        for (int i = 9; i <= 11; i++)
-        {
-            if (text[i].text == text[6].text & text[i].text == text[5].text & text[i].text == text[7].text)
-            {
-                text[i].text = (Random.Range(0, 9)).ToString();
-                Debug.Log(text[i].text);
-            }
-        }
-            
+        //for (int i = 9; i <= 11; i++)
+        //{
+            //while (text[i].text == text[6].text || text[i].text == text[5].text || text[i].text == text[7].text)
+            //{
+              //  text[i].text = (Random.Range(0, 9)).ToString();
+                // Debug.Log(text[i].text);
+            //}
+
+       // }
     }
 
-      
     public void Knopka()
     {
         image1.SetActive(false);
     }
-
-
-
 }
+
+
 
 
 
